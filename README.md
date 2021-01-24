@@ -22,6 +22,7 @@ Upgrade from Unity 2019.4.15f1 to Unity 2020.2.2f1
 * iOS/Android builds
 * Steam builds
 * AI vs AI?
+* Better AI/Ability to change AI play modes on the fly
 * Player vs Player via split screen
 * Player vs Player via network
 * Multiple player support
