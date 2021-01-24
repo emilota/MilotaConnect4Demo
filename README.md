@@ -18,4 +18,15 @@ Upgrade from Unity 2019.4.15f1 to Unity 2020.2.2f1
 * More dynamic camera
 * Better art
 * Score keeping
-* AI vs AI, Player vs Player, add network support, multiple player support, etc
+* Support touch 
+* iOS/Android builds
+* Steam builds
+* AI vs AI?
+* Player vs Player via split screen
+* Player vs Player via network
+* Multiple player support
+* Real time play as fast as possible game mode?
+* Fullscreen/windows toggle
+* Need to test for various screen resolutions/aspect ratios
+* Prettier menus/buttons
+
