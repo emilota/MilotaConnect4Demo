@@ -13,12 +13,15 @@ Upgrade from Unity 2019.4.15f1 to Unity 2020.2.2f1
 
 
 # Improvements that can be done
+* Support touch 
+* More optimized AI [currently brute force and not smart.  Would like to see places that you can go and determine to block you if that could get you a win]
+* Use Checker class for grid entry pieces [rather than managing that seperately]
+* Use Checker class for player select [rather than managing that seperately]
 * Localization
 * Sound
 * More dynamic camera
 * Better art
 * Score keeping
-* Support touch 
 * iOS/Android builds
 * Steam builds
 * AI vs AI?
