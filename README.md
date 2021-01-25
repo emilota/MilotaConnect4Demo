@@ -22,6 +22,7 @@ Monday, January 25th, 2021 @ 9:47am PST
 * Fixed Android quit/restart issue.  
 * Removed all Input.GetMouseButtonDown(0) checks and instead replaced by full screen button click callbacks.
 * Updated state machine to support RestartOrQuit button and Fullscreen button clicks, so you can do different stuff based on context.
+* Few UI tweaks.  Made footer blink on Title and Game Over screens for instance.
 
 # Improvements that can be done
 * Need to test for various screen resolutions/aspect ratios
