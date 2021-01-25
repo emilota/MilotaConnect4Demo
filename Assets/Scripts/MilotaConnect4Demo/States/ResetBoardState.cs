@@ -1,3 +1,5 @@
+// Created and programmed by Eric Milota, 2021
+
 using System.Collections.Generic;
 
 namespace MilotaConnect4Demo
@@ -14,6 +16,15 @@ namespace MilotaConnect4Demo
         }
 
         public override void OnStateLeave(Controller controller) 
+        {
+        }
+
+        public override void OnStateClickRestartOrQuitButton(Controller controller)
+        {
+            controller.StateManager.GotoState(State.TITLE_SCREEN);
+        }
+
+        public override void OnStateClickFullscreenButton(Controller controller)
         {
         }
 

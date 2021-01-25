@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿// Created and programmed by Eric Milota, 2021
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -19,8 +21,12 @@ namespace MilotaConnect4Demo
         public const AIPlayStyle DEBUG_AI_PLAY_STYLE = AIPlayStyle.SOME_SMARTS; // DEBUGGING TOOL: Make AI play a specific way
 
         public const int START_NEW_GAME_MESSAGE_TIME_IN_MS = 1*1000; // 1 second
+
+        public const int FOOTER_BLINK_RATE_IN_MS = 500; // 1/2 sec
+
         public const int SELECT_CHECKER_BLINK_MS = 300; // 300ms
         public const float CHECKER_DROP_SCALE = 0.2f; // it's a % of the delta between rows
+
         public const int GAME_OVER_MESSAGE_BLINK_MS = 2*1000; // 2 seconds
         public const int WINNING_CHECKERS_BLINK_IN_MS = 200; // 1/5 of a second
     }

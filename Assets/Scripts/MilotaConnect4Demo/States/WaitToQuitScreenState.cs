@@ -5,38 +5,41 @@ using UnityEngine.EventSystems;
 
 namespace MilotaConnect4Demo
 {
-    public class ThanksForPlayingState : BaseState
+    public class WaitToQuitScreenState : BaseState
     {
-        public override State State => State.THANKS_FOR_PLAYING;
+        public override State State => State.WAIT_TO_QUIT_SCREEN;
 
         public override void OnStateEnter(Controller controller)
         {
-            controller.SetRestartOrQuitButtonMode(RestartOrQuitButtonMode.REALLY_QUIT);
+            controller.SetRestartOrQuitButtonMode(RestartOrQuitButtonMode.NONE);
             controller.UI.HideBoard();
+            controller.UI.HideTitle();
             controller.UI.HideBigMessage();
-
-            controller.UI.ShowBigMessage(Localize.THANKS_FOR_PLAYING_BIG_MESSAGE);
-            controller.UI.ShowFooterMessage(Localize.THANKS_FOR_PLAYING_FOOTER_MESSAGE);
+            controller.UI.HideFooterMessage();
         }
 
         public override void OnStateLeave(Controller controller)
         {
-            controller.UI.HideTitle();
-            controller.UI.HideFooterMessage();
         }
 
         public override void OnStateClickRestartOrQuitButton(Controller controller)
         {
-            controller.StateManager.GotoState(State.WAIT_TO_QUIT_SCREEN);
         }
 
         public override void OnStateClickFullscreenButton(Controller controller)
         {
-            //controller.StateManager.GotoState(State.WAIT_TO_QUIT_SCREEN);
         }
 
         public override void OnStateUpdate(Controller controller)
         {
+            if (controller.StateManager.TimeInCurrentState >= (100)) // TODO: remove magic hard coded number...1/10th of a sec
+            {
+                controller.StateManager.GotoState(State.TITLE_SCREEN);
+            }
+            else
+            {
+                controller.QuitProgram(); // this might not do anything, so we've got a fallback
+            }
         }
 
         public override void OnStateFixedUpdate(Controller controller)

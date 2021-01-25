@@ -1,3 +1,5 @@
+// Created and programmed by Eric Milota, 2021
+
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -15,6 +17,7 @@ namespace MilotaConnect4Demo
         public override MilotaConnect4Demo.State State => MilotaConnect4Demo.State.GAME_OVER;
 
         private DisplayMode mDisplayMode = DisplayMode.NONE;
+        private bool mFooterMessageToggle = true;
 
         private void UpdateBigMessage(Controller controller)
         {
@@ -65,11 +68,29 @@ namespace MilotaConnect4Demo
             }
         }
 
+        private void UpdateFooterMessage(Controller controller)
+        {
+            if (controller.StateManager.TimeInCurrentState > controller.UI.FooterBlinkRateInMS)
+            {
+                mFooterMessageToggle = !mFooterMessageToggle;
+                controller.StateManager.ResetStateTime();
+            }
+            if (mFooterMessageToggle)
+            {
+                controller.UI.ShowFooterMessage(Localize.GAME_OVER_FOOTER_MESSAGE);
+            }
+            else
+            {
+                controller.UI.HideFooterMessage();
+            }
+        }
+
         public override void OnStateEnter(Controller controller) 
         {
             mDisplayMode = DisplayMode.GAME_OVER;
+            mFooterMessageToggle = true;
             UpdateBigMessage(controller);
-            controller.UI.ShowFooterMessage(Localize.GAME_OVER_FOOTER_MESSAGE);
+            UpdateFooterMessage(controller);
         }
 
         public override void OnStateLeave(Controller controller) 
@@ -102,6 +123,16 @@ namespace MilotaConnect4Demo
             }
         }
 
+        public override void OnStateClickRestartOrQuitButton(Controller controller) 
+        {
+            controller.StateManager.GotoState(State.TITLE_SCREEN);
+        }
+
+        public override void OnStateClickFullscreenButton(Controller controller) 
+        {
+            controller.StateManager.GotoState(State.RESET_BOARD);
+        }
+
         public override void OnStateUpdate(Controller controller) 
         {
             if (controller.StateManager.TimeInCurrentState >= controller.UI.GameOverMessageBlinkInMS)
@@ -110,16 +141,11 @@ namespace MilotaConnect4Demo
                 controller.StateManager.ResetStateTime();
                 UpdateBigMessage(controller);
             }
-
-            if ((Input.GetMouseButtonDown(0)) && 
-                (!EventSystem.current.IsPointerOverGameObject())) // ignore if over button
-            {
-                controller.StateManager.GotoState(State.RESET_BOARD);
-            }
         }
 
         public override void OnStateFixedUpdate(Controller controller)
         {
+            UpdateFooterMessage(controller);
             controller.Board.UpdateCheckerShowHide();
         }
     }

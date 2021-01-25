@@ -1,3 +1,5 @@
+// Created and programmed by Eric Milota, 2021
+
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -56,7 +58,12 @@ namespace MilotaConnect4Demo
             }
         }
 
-        public override void OnStateUpdate(Controller controller) 
+        public override void OnStateClickRestartOrQuitButton(Controller controller)
+        {
+            controller.StateManager.GotoState(State.TITLE_SCREEN);
+        }
+
+        public override void OnStateClickFullscreenButton(Controller controller)
         {
             switch (controller.Board.WhichPlayerCurrent)
             {
@@ -67,6 +74,7 @@ namespace MilotaConnect4Demo
                 case WhichPlayer.PLAYER_1_HUMAN:
                     {
                         // it's my turn
+
                         // show/hide 3D cursor
                         RaycastHit raycastHit;
                         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -93,10 +101,9 @@ namespace MilotaConnect4Demo
                             controller.Board.HideCheckerSelect();
                         }
 
-                        if ((controller.Board.IsCheckerSelectShowing) && 
-                            (Input.GetMouseButtonDown(0)) &&
-                            (!EventSystem.current.IsPointerOverGameObject())) // ignore if over button
+                        if (controller.Board.IsCheckerSelectShowing)
                         {
+                            // drop checker....maybe
                             if (controller.Board.TryDropChecker(
                                     controller.Board.WhichPlayerCurrent,
                                     controller.Board.CheckerSelectCol,
@@ -105,6 +112,57 @@ namespace MilotaConnect4Demo
                                 // player 1 human dropped a checker
                                 controller.StateManager.GotoState(State.PLAYER_MOVE);
                             }
+                        }
+                        break;
+                    }
+                case WhichPlayer.PLAYER_2_AI:
+                    {
+                        // it's AI's turn
+                        break;
+                    }
+                default:
+                    {
+                        break;
+                    }
+            }
+        }
+
+        public override void OnStateUpdate(Controller controller) 
+        {
+            switch (controller.Board.WhichPlayerCurrent)
+            {
+                case WhichPlayer.NONE:
+                    {
+                        break;
+                    }
+                case WhichPlayer.PLAYER_1_HUMAN:
+                    {
+                        // it's my turn... update checker position
+
+                        // show/hide 3D cursor
+                        RaycastHit raycastHit;
+                        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                        if (Physics.Raycast(ray, out raycastHit))
+                        {
+                            int col = Const.INVALID_COL_VALUE;
+                            int row = Const.INVALID_ROW_VALUE;
+                            if (controller.Board.FindColumnFromPlaneCoordX(
+                                raycastHit.point.x,
+                                ref col,
+                                ref row))
+                            {
+                                controller.Board.ShowCheckerSelect(
+                                    col,
+                                    row);
+                            }
+                            else
+                            {
+                                controller.Board.HideCheckerSelect();
+                            }
+                        }
+                        else
+                        {
+                            controller.Board.HideCheckerSelect();
                         }
                         break;
                     }

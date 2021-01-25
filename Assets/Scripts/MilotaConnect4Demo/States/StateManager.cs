@@ -1,3 +1,5 @@
+// Created and programmed by Eric Milota, 2021
+
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -69,6 +71,16 @@ namespace MilotaConnect4Demo
             mBaseState?.OnStateLeave(mController);
         }
 
+        public void OnStateClickRestartOrQuitButton()
+        {
+            mBaseState?.OnStateClickRestartOrQuitButton(mController);
+        }
+
+        public void OnStateClickFullscreenButton()
+        {
+            mBaseState?.OnStateClickFullscreenButton(mController);
+        }
+
         public void OnStateUpdate()
         {
             mBaseState?.OnStateUpdate(mController);
@@ -93,15 +105,8 @@ namespace MilotaConnect4Demo
             mState = stateNew;
             mStateTimestamp = Util.GetMS();
 
-            if (stateNew == State.NONE)
-            {
-                mController?.QuitProgram();
-            }
-            else
-            {
-                // enter new state
-                OnStateEnter();
-            }
+            // enter new state
+            OnStateEnter();
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Created and programmed by Eric Milota, 2021
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +11,10 @@ namespace MilotaConnect4Demo
     {
         // TODO: Replace English text with localized version of the text, per language
 
+        public static string RESTART_OR_QUIT_BUTTON_NONE = "";
         public static string RESTART_OR_QUIT_BUTTON_RESTART = "Restart";
         public static string RESTART_OR_QUIT_BUTTON_QUIT = "Quit";
+        public static string RESTART_OR_QUIT_BUTTON_REALLY_QUIT = "Bye!";
 
         // title screen text
         public static string TITLE_SCREEN_FOOTER_MESSAGE = "Click here to start playing";

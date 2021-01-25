@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Created and programmed by Eric Milota, 2021
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,14 +16,16 @@ namespace MilotaConnect4Demo
         PLAYER_MOVE,
         GAME_OVER,
         RESET_BOARD,
-        THANKS_FOR_PLAYING
+        THANKS_FOR_PLAYING,
+        WAIT_TO_QUIT_SCREEN
     }
 
     public enum RestartOrQuitButtonMode
     {
         NONE,
         RESTART,
-        QUIT
+        QUIT,
+        REALLY_QUIT
     }
 
     public enum WhichPlayer : int

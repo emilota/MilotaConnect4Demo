@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Created and programmed by Eric Milota, 2021
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;

@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\MilotaConnect4Demo\States\BaseState.cs" />
     <Compile Include="Assets\Scripts\MilotaConnect4Demo\Board.cs" />
     <Compile Include="Assets\Scripts\MilotaConnect4Demo\States\TitleScreenState.cs" />
+    <Compile Include="Assets\Scripts\MilotaConnect4Demo\States\WaitToQuitScreenState.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

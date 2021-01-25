@@ -1,3 +1,5 @@
+// Created and programmed by Eric Milota, 2021
+
 namespace MilotaConnect4Demo
 {
     public class StartNewGameState : BaseState
@@ -18,6 +20,15 @@ namespace MilotaConnect4Demo
         public override void OnStateLeave(Controller controller) 
         {
             controller.UI.HideBigMessage();
+        }
+
+        public override void OnStateClickRestartOrQuitButton(Controller controller)
+        {
+            controller.StateManager.GotoState(State.TITLE_SCREEN);
+        }
+
+        public override void OnStateClickFullscreenButton(Controller controller)
+        {
         }
 
         public override void OnStateUpdate(Controller controller)

@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿// Created and programmed by Eric Milota, 2021
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -15,13 +17,13 @@ namespace MilotaConnect4Demo
         public AIPlayStyle DebugAIPlayStyle = Const.DEBUG_AI_PLAY_STYLE;
 
         public int StartNewGameMessageTimeInMS = Const.START_NEW_GAME_MESSAGE_TIME_IN_MS;
+        public int FooterBlinkRateInMS = Const.FOOTER_BLINK_RATE_IN_MS;
         public int SelectCheckerBlinkMS = Const.SELECT_CHECKER_BLINK_MS;
         public float CheckerDropScale = Const.CHECKER_DROP_SCALE;
         public int GameOverMessageBlinkInMS = Const.GAME_OVER_MESSAGE_BLINK_MS;
         public int WinningCheckersBlinkInMS = Const.WINNING_CHECKERS_BLINK_IN_MS;
 
         // game objects already in scene
-        public GameObject GORestartOrQuitButton;
         public GameObject GORestartOrQuitButtonText;
         public GameObject GOTitle;
         public GameObject GOBoard;
