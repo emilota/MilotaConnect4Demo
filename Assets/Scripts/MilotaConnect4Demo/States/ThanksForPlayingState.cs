@@ -32,7 +32,7 @@ namespace MilotaConnect4Demo
 
         public override void OnStateClickFullscreenButton(Controller controller)
         {
-            //controller.StateManager.GotoState(State.WAIT_TO_QUIT_SCREEN);
+            controller.StateManager.GotoState(State.WAIT_TO_QUIT_SCREEN);
         }
 
         public override void OnStateUpdate(Controller controller)

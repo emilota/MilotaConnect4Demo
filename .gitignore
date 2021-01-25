@@ -1,7 +1,6 @@
 /[Ll]ibrary/
 /[Ll]ogs/
 /[Ll]ogs/
-/[Mm]ilota[Cc]onnect4[Ss]tand[Aa]lone[Pp][Cc]/
 /[Oo]bj/
 /[Tt]mp/
 /[Tt]emp/
@@ -10,5 +9,4 @@
 *.tmp
 *.user
 *.pdb
-*.apk
 *.aab
