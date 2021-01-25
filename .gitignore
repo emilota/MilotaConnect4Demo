@@ -5,8 +5,11 @@
 /[Tt]mp/
 /[Tt]emp/
 /[Ww]ork/
+/.vs/
 
+*.suo
 *.tmp
 *.user
 *.pdb
 *.aab
+.vsconfig
