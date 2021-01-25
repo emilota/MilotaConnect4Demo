@@ -4,13 +4,18 @@ Custom Connect 4 Unity Game made by me
 # Release notes
 
 Sunday, January 24th, 2021 @ 2:21pm PST
-Uploaded MilotaConnect4Demo build under Unity 2019.4.15f
-Note: Make sure you select Connect4Scene when starting for the first time.
-Note: Game requires a mouse to play.  You can't use touch [unless your machine simulates a mouse click]
+
+* Uploaded MilotaConnect4Demo build under Unity 2019.4.15f
+* Make sure you select Connect4Scene when starting for the first time.
+* Game requires a mouse to play.  You can't use touch [unless your machine simulates a mouse click] 
 
 Sunday, January 24th, 2021 @ 3:07pm PST
-Upgrade from Unity 2019.4.15f1 to Unity 2020.2.2f1
 
+* Upgrade from Unity 2019.4.15f1 to Unity 2020.2.2f1
+
+Sunday, January 24th, 2021 @ 6:40pm PST
+
+* Built and run on Android.  Must be run in landscape mode.  Game play works [touch turns into mouse clicks].  However there's a bug from Title screen and Quit button.  It goes to Thanks for Playing screen but then returns to Title screen for some reason.  Need to investigate.
 
 # Improvements that can be done
 * Support touch 
