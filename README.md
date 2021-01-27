@@ -25,6 +25,18 @@ Currently targeted to PC (Windows) and Android builds.  Will support iOS at some
 * Updated state machine to support RestartOrQuit button and Fullscreen button clicks, so you can do different stuff based on context.
 * Few UI tweaks.  Made footer blink on Title and Game Over screens for instance.
 
+***Tuesday, January 26th, 2021 @ 7:07pm PST***
+
+* Replaces MainScene with SplashScene, GameScene, and ExitScene.  Added a SceneManager to help with transitions between scenes.
+* Added code to allow state changes to force scene changes.  Added code in each scene that forces Initial scene if you start the app not in the one you want.
+* Converted Controller to App class.  Removed singletons.  Renamed GameUI to GameSceneMB (GameSceneMonoBehavior), and added SplashSceneMB and ExitSceneMB.
+* Tweaks to UI for each scene (specially how clicks on buttons or full screens work)
+* Removed Wait To Quit state.  QuitProgram now will just go to TITLE_SCREEN state if on Android (as well as minimize the app)
+
+# Known Bugs
+* Game needs to run in landscape mode.  Don't run in portrait mode because buttons and screen objects just don't fit.
+* One of my android devices runs games just fine [Huawei MediaPad M5] but my other one [OnePlus 6t] has issues with Quit/Restart button [you can't click it]
+
 # Improvements that can be done
 * Need to test for various screen resolutions/aspect ratios
 * Fix aspect ratio issues [aka it looks bad in portrait mode...need to force landscape mode or come up with some strategy for that]
