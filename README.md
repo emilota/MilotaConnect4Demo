@@ -1,14 +1,14 @@
 # MilotaConnect4Demo
-Custom Connect 4 Unity Game made by me
+Custom Connect 4 Unity Game made by me.
+You need Unity 2019.4.15f for initial commit in main branch.
+Currently needs Unity 2020.2.2f1 for latest in main branch.
 
-# Platforms supported
-* Windows 10 PC
-* Android builds (need to verify which versions)
-
-# Platforms we want to ultimately support
-* Mac
-* Steam
-* iOS (ipad/iphone)
+# Platforms
+* Supported/Verified: Windows 10 PC
+* Supported/Verified: Android builds (need to verify which versions)
+* Future Maybe: Mac
+* Future Maybe: Steam
+* Future Maybe: iOS (ipad + iphone)
 
 # Release notes
 
