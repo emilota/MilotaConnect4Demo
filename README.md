@@ -2,6 +2,7 @@
 Custom Connect 4 Unity Game made by me.
 You need Unity 2019.4.15f for initial commit in main branch.
 Currently needs Unity 2020.2.2f1 for latest in main branch.
+Check out some screenshots here:  https://github.com/emilota/MilotaConnect4Demo/tree/main/Screenshots
 
 # Platforms
 * Supported/Verified: Windows 10 PC
