@@ -24,6 +24,7 @@ namespace MilotaConnect4Demo
 
         //-------------------------------------
 
+        private ScreenOrientationManager mScreenOrientationManager = new ScreenOrientationManager();
         private StateManager mStateManager = new StateManager();
         private SceneManager mSceneManager = new SceneManager();
         private Board mBoard = new Board();
@@ -53,6 +54,10 @@ namespace MilotaConnect4Demo
         {
             Uninit();
 
+            mScreenOrientationManager.Init(
+                Const.APP_SCREEN_ORIENTATION_MANAGER_MODE,
+                Const.APP_SCREEN_ORIENTATION_MANAGER_MS_BETWEEN_PUMPS,
+                Const.APP_SCREEN_ORIENTATION_MANAGER_MS_TO_RESTORE);
             mStateManager.Init(this);
             mSceneManager.Init();
             mBoard.Init(this);
@@ -223,6 +228,7 @@ namespace MilotaConnect4Demo
         public void OnAppUpdate()
         {
             // update current state
+            mScreenOrientationManager.OnScreenOrientationManagerUpdate();
             mStateManager.OnStateUpdate();
         }
 
@@ -233,6 +239,20 @@ namespace MilotaConnect4Demo
 
             // update game board
             mBoard.OnBoardFixedUpdate();
+        }
+
+        public void OnAppApplicationFocus(bool focus)
+        {
+            mScreenOrientationManager.OnScreenOrientationApplicationFocus(focus);
+        }
+
+        public void OnAppApplicationPause(bool pause)
+        {
+            mScreenOrientationManager.OnScreenOrientationApplicationPause(pause);
+        }
+
+        public void OnAppApplicationQuit()
+        {
         }
     }
 }

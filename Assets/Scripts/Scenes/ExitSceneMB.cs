@@ -61,6 +61,21 @@ namespace MilotaConnect4Demo
             UpdateFooterMessage();
             mApp.OnAppFixedUpdate();
         }
+
+        public void OnApplicationFocus(bool focus)
+        {
+            mApp.OnAppApplicationFocus(focus);
+        }
+
+        public void OnApplicationPause(bool pause)
+        {
+            mApp.OnAppApplicationPause(pause);
+        }
+
+        public void OnApplicationQuit()
+        {
+            mApp.OnAppApplicationQuit();
+        }
     }
 }
 

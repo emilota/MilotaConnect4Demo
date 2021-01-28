@@ -9,6 +9,10 @@ namespace MilotaConnect4Demo
 {
     public class Const
     {
+        public const ScreenOrientationManagerMode APP_SCREEN_ORIENTATION_MANAGER_MODE = ScreenOrientationManagerMode.ANY_LANDSCAPE_ORIENTATION_OK;
+        public const int APP_SCREEN_ORIENTATION_MANAGER_MS_BETWEEN_PUMPS = 100; // 1/10th of a second
+        public const int APP_SCREEN_ORIENTATION_MANAGER_MS_TO_RESTORE = 500;    // 1/2 of a second
+
         public const int INVALID_COL_VALUE = -1;
         public const int INVALID_ROW_VALUE = -1;
 
