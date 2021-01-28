@@ -1,6 +1,14 @@
 # MilotaConnect4Demo
 Custom Connect 4 Unity Game made by me
-Currently targeted to PC (Windows) and Android builds.  Will support iOS at some point [hopefully once I get an iOS device to test on...]
+
+# Platforms supported
+* Windows 10 PC
+* Android builds (need to verify which versions)
+
+# Platforms we want to ultimately support
+* Mac
+* Steam
+* iOS (ipad/iphone)
 
 # Release notes
 
@@ -33,14 +41,18 @@ Currently targeted to PC (Windows) and Android builds.  Will support iOS at some
 * Tweaks to UI for each scene (specially how clicks on buttons or full screens work)
 * Removed Wait To Quit state.  QuitProgram now will just go to TITLE_SCREEN state if on Android (as well as minimize the app)
 
+***Thursday, January 28th, 2021 @ 7:40am PST***
+
+* Add ScreenOrientationManager and have it force us into landscape mode (either direction).  I wrote it in such a way that it checks periodically and forces it again as I've seen some devices that don't listen to Unity's value so setting it multiple times seems to fix that.
+* Still have OnePlus 6t Quit/Restart button bug though, so this orientation fix didn't fix that, unfortunately
+
 # Known Bugs
-* Game needs to run in landscape mode.  Don't run in portrait mode because buttons and screen objects just don't fit.
 * One of my android devices runs games just fine [Huawei MediaPad M5] but my other one [OnePlus 6t] has issues with Quit/Restart button [you can't click it]
 
 # Improvements that can be done
 * Need to test for various screen resolutions/aspect ratios
-* Fix aspect ratio issues [aka it looks bad in portrait mode...need to force landscape mode or come up with some strategy for that]
-* Fullscreen/windows toggle
+* Fix aspect ratio issues [issues with ultra wide landscape perhaps?]
+* Fullscreen/windows toggle (on PCs)
 * Sound (there is none)
 * Support touch [though touches on my Android device appear to create mouse moves/clicks...need to test on other devices]
 * Prettier menus/buttons
@@ -49,10 +61,11 @@ Currently targeted to PC (Windows) and Android builds.  Will support iOS at some
 * Use Checker class for player select [rather than managing that seperately]
 * Localization
 * More dynamic camera
-* Better art
+* Better art/lighting + scene background/world
 * Score keeping
 * iOS builds?
 * Steam builds?
+* Mac builds?
 * More Game Modes: AI vs AI?
 * Better AI/Ability to change AI play modes on the fly
 * More Game Modes: Player vs Player via split screen?
