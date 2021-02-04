@@ -6,9 +6,9 @@ Check out some screenshots here:  https://github.com/emilota/MilotaConnect4Demo/
 
 # Platforms
 * Supported/Verified: Windows 10 PC
-** PC Version located here (copy entire directory to your local computer then run exe):  https://github.com/emilota/MilotaConnect4Demo/tree/main/MilotaConnect4DemoPC
+  ```PC Version located here (copy entire directory to your local computer then run exe):  https://github.com/emilota/MilotaConnect4Demo/tree/main/MilotaConnect4DemoPC```
 * Supported/Verified: Android builds (need to verify which versions)
-** Copy APK to your android device then run/install it there.  https://github.com/emilota/MilotaConnect4Demo/tree/main/MilotaConnect4DemoAndroid
+  ```Copy APK to your android device then run/install it there.  https://github.com/emilota/MilotaConnect4Demo/tree/main/MilotaConnect4DemoAndroid```
 * Future Maybe: Mac
 * Future Maybe: Steam
 * Future Maybe: iOS (ipad + iphone)
