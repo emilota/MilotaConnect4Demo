@@ -7,6 +7,7 @@ Check out some screenshots here:  https://github.com/emilota/MilotaConnect4Demo/
 # Platforms
 * Supported/Verified: Windows 10 PC
 * Supported/Verified: Android builds (need to verify which versions)
+    APK located here:  https://github.com/emilota/MilotaConnect4Demo/tree/main/MilotaConnect4DemoAndroid
 * Future Maybe: Mac
 * Future Maybe: Steam
 * Future Maybe: iOS (ipad + iphone)
